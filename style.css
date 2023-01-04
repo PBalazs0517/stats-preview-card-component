@@ -28,17 +28,15 @@
   --size-800: 4rem;
   --size-900: 5rem;
 
-  --fs-heading: var(--size-700);
-  --fs-stat: var(--size-550);
-  --fs-stat__name: var(--size-450);
+  --fs-title: var(--size-700);
+  --fs-stats: var(--size-550);
   --fs-secondary: var(--size-450);
 }
 
 @media (max-width: 50em) {
   :root {
-    --fs-heading: var(--size-650);
-    --fs-stat: var(--size-550);
-    --fs-stat__name: var(--size-500);
+    --fs-title: var(--size-650);
+    --fs-stats: var(--size-550);
     --fs-secondary: var(--size-400);
   }
 }
@@ -235,11 +233,11 @@ select {
   color: var(--clr-accent-300);
 }
 
-.fs-heading {
-  font-size: var(--fs-heading);
+.fs-title {
+  font-size: var(--fs-title);
 }
-.fs-stat {
-  font-size: var(--fs-stat);
+.fs-stats {
+  font-size: var(--fs-stats);
 }
 .fs-secondary {
   font-size: var(--fs-secondary);
@@ -272,10 +270,6 @@ select {
 
 .margin-bottom-650 {
   margin-bottom: var(--size-650);
-}
-
-.align-center {
-  margin-inline: auto;
 }
 
 @media (max-width: 50em) {
