@@ -1,0 +1,284 @@
+:root {
+  font-size: 15px;
+
+  --clr-primary-900: hsl(233, 47%, 7%);
+  --clr-primary-600: hsl(244, 38%, 16%);
+  --clr-primary-300: hsl(277, 64%, 61%);
+
+  --clr-accent-900: hsl(0, 0%, 100%);
+  --clr-accent-600: hsla(0, 0%, 100%, 0.75);
+  --clr-accent-300: hsla(0, 0%, 100%, 0.6);
+
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Lexend Deca", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --size-300: 0.5rem;
+  --size-350: 0.75rem;
+  --size-400: 1rem;
+  --size-425: 1.125rem;
+  --size-450: 1.25rem;
+  --size-500: 1.5rem;
+  --size-550: 1.75rem;
+  --size-600: 2rem;
+  --size-650: 2.5rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
+
+  --fs-heading: var(--size-700);
+  --fs-stat: var(--size-550);
+  --fs-stat__name: var(--size-450);
+  --fs-secondary: var(--size-450);
+}
+
+@media (max-width: 50em) {
+  :root {
+    --fs-heading: var(--size-650);
+    --fs-stat: var(--size-550);
+    --fs-stat__name: var(--size-500);
+    --fs-secondary: var(--size-400);
+  }
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 50em) {
+  body {
+    height: fit-content;
+  }
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* general */
+
+/* card */
+
+.card {
+  width: min(1440px, 75%);
+  min-width: 920px;
+  overflow: hidden;
+  margin-block: var(--size-800);
+  border-radius: var(--size-300);
+}
+
+@media (max-width: 50em) {
+  .card {
+    min-width: 375px;
+  }
+}
+
+/* stats */
+
+.stats {
+  width: 80%;
+  display: flex;
+  text-transform: uppercase;
+  justify-content: space-between;
+  gap: var(--size-400);
+}
+
+@media (max-width: 50em) {
+  .stats {
+    flex-direction: column;
+    gap: var(--size-600);
+  }
+}
+
+/* img */
+
+.img {
+  background-image: url(./images/image-header-desktop.jpg);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 50em) {
+  .img {
+    background-image: url(./images/image-header-mobile.jpg);
+    height: 388.13px;
+  }
+}
+
+.img::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: var(--clr-primary-300);
+  opacity: 0.5;
+  width: 100000px;
+  aspect-ratio: 1;
+}
+
+/* utility classes */
+
+.even-columns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+@media (max-width: 50em) {
+  .reverse-order {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media (max-width: 50em) {
+  .text-center-sm-only {
+    text-align: center;
+  }
+}
+
+.text-primary-900 {
+  color: var(--clr-primary-900);
+}
+.text-primary-600 {
+  color: var(--clr-primary-600);
+}
+.text-primary-300 {
+  color: var(--clr-primary-300);
+}
+
+.text-accent-900 {
+  color: var(--clr-accent-900);
+}
+.text-accent-600 {
+  color: var(--clr-accent-600);
+}
+.text-accent-300 {
+  color: var(--clr-accent-300);
+}
+
+.fs-heading {
+  font-size: var(--fs-heading);
+}
+.fs-stat {
+  font-size: var(--fs-stat);
+}
+.fs-secondary {
+  font-size: var(--fs-secondary);
+}
+
+.ff-primary {
+  font-family: var(--ff-primary);
+}
+.ff-secondary {
+  font-family: var(--ff-secondary);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+
+.bg-primary-900 {
+  background-color: var(--clr-primary-900);
+}
+.bg-primary-600 {
+  background-color: var(--clr-primary-600);
+}
+
+.padding-800 {
+  padding: var(--size-800);
+}
+
+.margin-bottom-650 {
+  margin-bottom: var(--size-650);
+}
+
+.align-center {
+  margin-inline: auto;
+}
+
+@media (max-width: 50em) {
+  .align-center-sm-only {
+    margin-inline: auto;
+  }
+}
